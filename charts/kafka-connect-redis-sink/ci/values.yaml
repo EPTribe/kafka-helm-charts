@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: streamreactor/redis-sink
+  repository: streamreactor/redis
   tag: 1.2.1
   pullPolicy: IfNotPresent
 
@@ -40,6 +40,8 @@ schemaRegistries:
       port: 8081
       jmxPort: 9582 
 
+secretsProvider: env
+
 # javaHeap options    
 javaHeap: 256M
 
@@ -51,8 +53,6 @@ restPort: "8083"
 
 # logLevel The log4j level
 logLevel: INFO
-
-keySpace: "test"
 
 # keyConverter The key converter to/from Connects struct
 keyConverter: "io.confluent.connect.avro.AvroConverter"
